@@ -22,3 +22,8 @@
 - Bootstrap
 - Font Awesome 
 - Google Fonts
+
+Features
+
+- Added Scroll to Top button 
+- Typewriter Animation at the front page
