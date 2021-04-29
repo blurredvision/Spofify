@@ -2,35 +2,34 @@
 @{
     Layout = "_Layout";
 }
+<section>
+    <div class="container security-container" style="background-color: white; padding: 20px; width: 350px; border-radius: 10px">
+        <h2 class="text-center">Sign In</h2>
+        <form method="post">
+            <div>
+                <label asp-for="UserName"></label>
+                <input type="text" asp-for="UserName" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="Email"></label>
+                <input type="text" asp-for="Email" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input type="password" asp-for="Password" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword">Confirm Password</label>
+                <input type="password" asp-for="ConfirmPassword" class="form-control" />
+            </div>
+            <div>
+                <br />
+                <button type="submit" class="add btn btn-dark">Create</button>
+                <a asp-controller="security" asp-action="signin" class="add btn btn-dark" style="float:right">Sign</a>
+            </div>
+            <div asp-validation-summary="All" class="message"></div>
 
-<h2>Create New User Account</h2>
-<form method="post">
-    <table>
-        <tr>
-            <td><label asp-for="UserName"></label></td>
-            <td><input type="text" asp-for="UserName" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Email"></label></td>
-            <td><input type="text" asp-for="Email" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="Password"></label></td>
-            <td><input type="password" asp-for="Password" /></td>
-        </tr>
-        <tr>
-            <td><label asp-for="ConfirmPassword"></label></td>
-            <td><input type="password" asp-for="ConfirmPassword" /></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <button type="submit">Create</button>
-            </td>
-        </tr>
-    </table>
-    <div asp-validation-summary="All" class="message"></div>
-
-    <h3><a asp-page="/Security/SignIn">Go To Sign-In Page</a></h3>
-
-</form>
+        </form>
+    </div>
+</section>
 

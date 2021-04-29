@@ -6,12 +6,13 @@
     <title>@ViewData["Title"] - Spofify</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/5e6d868f6f.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 navbar-color">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Spofify</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color: lightgreen">SPOFIFY</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,24 +20,24 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link li-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+                            <a class="nav-link li-color" asp-area="" asp-controller="Home" asp-action="Search">Search</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Songs">Songs</a>
+                            <a class="nav-link li-color" asp-area="" asp-controller="Home" asp-action="Songs">Songs</a>
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Songs" asp-action="Index">Add Songs</a>
+                                <a class="nav-link li-color" asp-area="" asp-controller="Songs" asp-action="Index">Add Songs</a>
                             </li>
                         }
                         @if (!User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Security" asp-action="SignIn">Sign In</a>
+                                <a class="nav-link li-color" asp-area="" asp-controller="Security" asp-action="SignIn">Sign In</a>
                             </li>
                         }
                     </ul>
@@ -45,9 +46,9 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="form-inline">
-                    <p class="mx-2" style="margin-top: 15px">Welcome @User.Identity.Name</p>
+                    <p class="mx-2" style="margin-top: 15px; color: #FAFAFF;">Welcome @User.Identity.Name</p>
                     <form asp-controller="Security" asp-action="SignOut" method="post">
-                        <button type="submit" class="delete" style="float:left">Sign Out</button>
+                        <button type="submit" class="delete btn btn-success" style="float:left;">Sign Out</button>
                     </form>
                 </div>
             }

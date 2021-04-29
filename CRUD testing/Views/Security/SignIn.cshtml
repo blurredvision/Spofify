@@ -2,27 +2,28 @@
 @{
     Layout = "_Layout";
 }
-<h2 class="fullWidth">Sign In</h2>
+
 <section>
-    <form asp-controller="Security" asp-action="SignIn" method="post">
-        <div>
-            <label asp-for="UserName"></label>
-            <input type="text" asp-for="UserName" />
-        </div>
-        <div>
-            <label asp-for="Password"></label>
-            <input type="password" asp-for="Password" />
-        </div>
-        <div>
-            <label asp-for="RememberMe"></label>
-            <input type="checkbox" asp-for="RememberMe" />
-        </div>
-        <div>
-            <button type="submit" class="add">Sign In</button>
-        </div>
-        <div asp-validation-summary="All" class="message"></div>
-
-        <h3><a asp-controller="security" asp-action="register">Create New User Account</a></h3>
-
-    </form>
+    <div class="container security-container" style="background-color: white; padding: 20px; width: 350px; border-radius: 10px">
+        <h2 class="text-center">Sign In</h2>
+        <form asp-controller="Security" asp-action="SignIn" method="post">
+            <div>
+                <label asp-for="UserName"></label>
+                <input type="text" asp-for="UserName" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input type="password" asp-for="Password" class="form-control" />
+            </div>
+            <div>
+                <label asp-for="RememberMe">Remember Me</label>
+                <input type="checkbox" asp-for="RememberMe" />
+            </div>
+            <div>
+                <button type="submit" class="add btn btn-dark">Sign In</button>
+                <a asp-controller="security" asp-action="register" class="add btn btn-dark" style="float:right">Register</a>
+            </div>
+            <div asp-validation-summary="All" class="message"></div>
+        </form>
+    </div>
 </section>

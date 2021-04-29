@@ -1,6 +1,70 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:wght@700&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #EEF0F2;
+}
+
+.bg-image{
+    background: url("../Image/bg.jpg") no-repeat center center fixed;
+    filter: blur(2px);
+}
+
+.line {
+    position: relative;
+    top: 50%;
+    width: 4.5em;
+    margin: 0 auto;
+    border-right: 2px solid black;
+    font-size: 100px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(150%);
+}
+
+.anim-typewriter{
+    animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter{
+    from{
+        width: 0;
+    }
+    to{
+        width: 4.5em;
+    }
+}
+
+@keyframes blinkTextCursor{
+    from{
+        border-right-color: black;
+    }
+    to{
+        border-right-color: transparent;
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-color {
+    background-color: #1C1C1C;
+}
+
+.nav-link, nav-link:hover {
+    color: #FAFAFF;
+}
+
+.li-color {
+    color: #FAFAFF;
+    text-decoration: none;
+}
 
 .card-href, .card-href:hover{
     text-decoration: none;
@@ -11,12 +75,12 @@ for details on configuring this project to bundle and minify static web assets. 
     text-align: center;
 }
 
-.details-container {
+.details-container, .security-container {
     transform: translate(0%, 50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.details-page, .songs-page {
+.details-page, .songs-page, .security-container {
     font-family: 'Krona One', sans-serif;
 }
 
