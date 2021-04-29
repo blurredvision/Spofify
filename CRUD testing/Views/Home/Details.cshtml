@@ -1,0 +1,20 @@
+﻿@model CRUD_testing.Models.Songs
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container details-container" style="background-color: #f8f8f8; padding: 20px; border-radius: 50px;">
+    <div class="row justify-content-center">
+        <div class="col-sm-3">
+            <img class="details-image" src="~/Image/@Html.DisplayFor(model => model.imageName)" style="border-radius:5px; height:250px" />
+        </div>
+        <div class="col-sm-4" style="margin-top: 10px;">
+            <p class="details-page">Song: @Html.DisplayFor(model => model.songName)</p>
+            <p class="details-page">Album: @Html.DisplayFor(model => model.songAlbum)</p>
+            <p class="details-page">Artist: @Html.DisplayFor(model => model.songArtist)</p>
+            <p class="details-page">Release Date: @Html.DisplayFor(model => model.ReleaseDate)</p>
+            <a class="btn btn-primary" asp-action="Songs">Back to List</a>
+        </div>
+    </div>
+</div>

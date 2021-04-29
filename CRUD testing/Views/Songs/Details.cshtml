@@ -1,0 +1,42 @@
+﻿@model CRUD_testing.Models.Songs
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Songs</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.songName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.songName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.songAlbum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.songAlbum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.imageName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.imageName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

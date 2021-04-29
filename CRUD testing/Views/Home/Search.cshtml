@@ -1,0 +1,58 @@
+﻿@{
+
+    ViewData["Title"] = "Song Search";
+
+}
+
+
+<section class="noflex">
+    <form asp-action="Search" method="get">
+        <h1>Search</h1>
+        <div>
+
+            <label for="SearchString">Search by Title: </label> <input type="text" name="SearchString" id="SearchString" />
+
+            <input type="submit" value="Filter" />
+
+        </div>
+
+    </form>
+
+    <div>
+
+        @if (ViewData["SearchString"] != null && (string)ViewData["SearchString"] != String.Empty)
+
+        {
+        <div class="row">
+            @foreach (Songs item in Model)
+            {
+                <a class="card-href" asp-controller="Home" asp-action="Details" asp-route-id="@item.ID">
+                    <div class="col-sm-3" style="margin-top: 10px;">
+                        <div class="card">
+                            <img class="card-img-top" src="~/Image/@item.imageName" height="250px" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title songs-page">@item.songName</h5>
+                                <p class="card-text songs-pagep" style="font-size: 13px">@item.songArtist</p>
+                                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.ID"></a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+
+
+            if (Model.Count == 0)
+
+
+            {
+
+                <p>Sorry no matches.</p>
+
+            }
+
+        }
+
+    </div>
+
+</section>
