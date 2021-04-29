@@ -23,7 +23,7 @@
 - Font Awesome 
 - Google Fonts
 
-Features
+## Features
 
 - Added Scroll to Top button 
 - Typewriter Animation at the front page
